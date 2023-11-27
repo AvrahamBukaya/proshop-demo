@@ -22,5 +22,5 @@ app.get('/api/products/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server on ${app_mode} mode,  runnig on port: ${port}`);
+  console.log(`Server on ${app_mode} mode,  running on port: ${port}`);
 });
