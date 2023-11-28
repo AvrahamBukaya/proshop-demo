@@ -1,12 +1,13 @@
 import express from 'express';
 import products from './data/products.js';
-
+import cors from 'cors';
 const port = process.env.PORT || 8000;
 const app_mode = process.env.NODE_ENV;
 
 const app = express();
 
-app.get('.', (req, res) => {
+app.use(cors());
+app.get('/', (req, res) => {
   res.send('Server Running.......');
 });
 

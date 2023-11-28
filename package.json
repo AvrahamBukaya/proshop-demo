@@ -5,14 +5,15 @@
   "type": "module",
   "main": "/backend/server.js",
   "scripts": {
-    "start":"node backend/server.js",
+    "start": "node backend/server.js",
     "server": "nodemon  --env-file=.env backend/server.js",
     "client": "npm run dev --prefix frontend",
-    "dev":"concurrently \"npm run server\" \"npm run client\" "
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "author": "Avraham Bukaya",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2"
   },
   "devDependencies": {
