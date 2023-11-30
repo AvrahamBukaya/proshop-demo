@@ -1,9 +1,12 @@
 import express from 'express';
 import products from './data/products.js';
 import cors from 'cors';
+
+import connectDB from './config/db.js';
 const port = process.env.PORT || 8000;
 const app_mode = process.env.NODE_ENV;
 
+connectDB();
 const app = express();
 
 app.use(cors());
