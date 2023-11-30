@@ -35,8 +35,15 @@ const productSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    image: {
-      type: String,
+    images: {
+      type: [
+        {
+          src: {
+            type: String,
+            required: true,
+          },
+        },
+      ],
       required: true,
     },
     brand: {
@@ -76,6 +83,6 @@ const productSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-const productModel = mongoose.model('Product', productSchema);
+const Product = mongoose.model('Product', productSchema);
 
-export default productModel;
+export default Product;

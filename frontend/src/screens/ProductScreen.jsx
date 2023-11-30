@@ -72,7 +72,7 @@ const ProductScreen = () => {
     </Row>
     <Row className={`${Style.img_wrapper} fluid`} >
         {product?.images?.length>1?(product.images.map((value,index) => {
-            return <Image  src={value} className={Style.img} onClick={()=>{setImgIndex(index)}} />  
+            return <Image key={value+index} src={value} className={Style.img} onClick={()=>{setImgIndex(index)}} />  
         })):<Col>No More Info</Col>}
        
     </Row>
