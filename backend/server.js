@@ -1,6 +1,7 @@
 import express from 'express';
 import products from './data/products.js';
 import cors from 'cors';
+import productRouter from './routes/prodcutRoutes.js';
 
 import connectDB from './config/db.js';
 const port = process.env.PORT || 8000;
@@ -8,14 +9,11 @@ const app_mode = process.env.NODE_ENV;
 
 connectDB();
 const app = express();
-
 app.use(cors());
+
+app.use('/api/products', productRouter);
 app.get('/', (req, res) => {
   res.send('Server Running.......');
-});
-
-app.get('/api/products', (req, res) => {
-  res.json(products);
 });
 
 app.get('/api/products/:id', (req, res) => {

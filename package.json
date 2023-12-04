@@ -8,7 +8,9 @@
     "start": "node backend/server.js",
     "server": "nodemon  --env-file=.env backend/server.js",
     "client": "npm run dev --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\" "
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "data:import":"node --env-file=.env backend/seeder.js",
+    "data:destroy":"node --env-file=.env backend/seeder.js -d"
   },
   "author": "Avraham Bukaya",
   "license": "MIT",
