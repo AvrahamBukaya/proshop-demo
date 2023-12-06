@@ -2,6 +2,7 @@ import express from 'express';
 import products from './data/products.js';
 import cors from 'cors';
 import productRouter from './routes/prodcutRoutes.js';
+import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 
 import connectDB from './config/db.js';
 const port = process.env.PORT || 8000;
@@ -22,6 +23,9 @@ app.get('/api/products/:id', (req, res) => {
 
   res.status(200).json(product);
 });
+
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`Server on ${app_mode} mode,  running on port: ${port}`);
