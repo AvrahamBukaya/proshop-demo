@@ -7,7 +7,7 @@ import HomeScreen from './screens/HomeScreen.jsx'
 import './index.css'
 import NotFound from './components/NotFound.jsx'
 import ProductScreen from './screens/ProductScreen.jsx'
-import store from './store.js'
+import store from './redux/store.js'
 import { Provider } from 'react-redux'
 
 
