@@ -1,27 +1,20 @@
-import { useEffect,useState } from 'react'
-import axios from 'axios'
+import { useGetProductsQuery } from '../redux/slices/productsSlice.js'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product.jsx'
 
 
+
 const HomeScreen = () => {
 
-  const [products, setproducts] = useState([]);
+ const {data:products,isLoading,isError} = useGetProductsQuery();
+ console.log(products)
 
-  const fetchData = async ()=>{
-    const {data} = await  axios.get('/api/products');
-    setproducts(data);
-  }
-
-  useEffect(()=>{
-     fetchData();
-  },[])
 
   return (
     <>
     <h1>Products</h1>
     <Row>
-        {products.map(p=>(
+        {products?.map(p=>(
             <Col key={p._id} sm={12} md={6} lg={4} xl={3}>
                 <Product prd={p}/>
             </Col>
