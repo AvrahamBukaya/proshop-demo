@@ -17,12 +17,12 @@ app.get('/', (req, res) => {
   res.send('Server Running.......');
 });
 
-app.get('/api/products/:id', (req, res) => {
-  const { id: productId } = req.params;
-  const product = products.find((p) => p._id === productId);
+// app.get('/api/products/:id', (req, res) => {
+//   const { id: productId } = req.params;
+//   const product = products.find((p) => p._id === productId);
 
-  res.status(200).json(product);
-});
+//   res.status(200).json(product);
+// });
 
 app.use(notFound);
 app.use(errorHandler);
