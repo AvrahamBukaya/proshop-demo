@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { addDecimal } from '../../utils/helpers.js'
 
 const initialState = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem("cart")) : {cartItems:[]}
 
@@ -19,9 +20,11 @@ const cartSlice = createSlice({
             }
         
         //Calculate items price
-        state.itemsPrice = state.cartItems.reduce((acc,curr)=>acc+ (curr.price*curr.),0);
-        
+        state.itemsPrice = addDecimal(state.cartItems.reduce((acc,item)=>acc+ item.price*item.qty,0));
+
         //Calculate shipping price
+
+
         //Calculate tax price
         //Calculate total price
         }
