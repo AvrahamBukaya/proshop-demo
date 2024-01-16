@@ -3,7 +3,8 @@ import {useState} from 'react'
 import { useGetProductQuery } from '../redux/slices/productsSlice.js'
 import { Row, Col,Image,ListGroup,Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating.jsx'
-import Loading from '../components/Loading.jsx'
+import Loader from '../components/Loader.jsx'
+import Message from '../components/Message.jsx'
 import Style from '../assets/style/productScreen.module.css'
 
 
@@ -15,7 +16,8 @@ const ProductScreen = () => {
 
   return (
     <>
-    {isLoading? <Loading/> : isError ? <p>{isError?.data?.error|| isError?.error}</p>:
+
+    {isLoading? <Loader/> : isError ? <Message variant='danger'>{isError?.data?.error|| isError?.error}</Message>:
     <><Link className='btn btn-light my-3' to="/">To Home Pages</Link>
     <Row>
     <Col md={5}>

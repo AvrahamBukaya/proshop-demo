@@ -1,7 +1,8 @@
 import { useGetProductsQuery } from '../redux/slices/productsSlice.js'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product.jsx'
-import Loading from '../components/Loading.jsx'
+import Loader from '../components/Loader.jsx'
+import Message from '../components/Message.jsx'
 
 
 
@@ -12,7 +13,7 @@ const HomeScreen = () => {
 
 
   return <>{isLoading ? 
-    <Loading/> : isError ? <p>{isError?.data?.error || isError?.error}</p>:
+    <Loader/> : isError ? <Message>{isError?.data?.error || isError?.error}</Message>:
     <><h1>Products</h1>
     <Row>
         {products?.map(p=>(
