@@ -1,4 +1,4 @@
-const BASE_URL= "http://localhost:6600";
+const BASE_URL= "http://localhost:5000";
 const PRODUCTS_URL= 'api/products'
 const USERS_URL= process.env.NODE_ENV === 'api/users'
 const ORDERS_URL= process.env.NODE_ENV === 'api/orders'
