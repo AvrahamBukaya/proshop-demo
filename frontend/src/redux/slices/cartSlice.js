@@ -23,10 +23,10 @@ const cartSlice = createSlice({
         state.itemsPrice = addDecimal(state.cartItems.reduce((acc,item)=>Number(acc+ item.price*item.qty),0));
 
         //Calculate shipping price
-        state.shippingPrice = addDecimal(state.itemsPrice > 100 ? 0 : 10)
+        state.shippingPrice = addDecimal(state.itemsPrice > 100 ? 0 : 10);
 
         //Calculate tax price
-        state.taxPrice = addDecimal(Number((state.itemsPrice + state.shippingPrice)*0.17).toFixed(2));
+        state.taxPrice = addDecimal((Number(state.itemsPrice) + Number(state.shippingPrice))*0.17);
 
         //Calculate total price
         state.totalPrice = addDecimal(Number(state.itemsPrice)+ Number(state.shippingPrice) + Number(state.taxPrice));
