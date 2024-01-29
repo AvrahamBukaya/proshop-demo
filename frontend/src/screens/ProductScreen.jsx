@@ -70,12 +70,7 @@ const ProductScreen = () => {
                     <Col>Qty:</Col>
                     <Col>
                     <FormControl  style={{width:"200px", textAlign:"center"}} as="select" value={qty} onChange={(e)=>{setQty(Number(e.target.value))}} >
-                        {[...Array(product.countInStock).keys()].map((x)=>{
-                          return  <option  key={x+1} value={x+1}>
-                                {x+1}
-                            </option>
-                        })}
-                     
+                       {[...Array(product.countInStock).keys()].map(x=> <option key={x*6} value={x+1}>{x+1}</option>)}
 
                     </FormControl>
                     </Col>
